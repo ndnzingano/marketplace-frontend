@@ -6,12 +6,9 @@ import './index.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const root: HTMLElement | null = document.getElementById('root');
-if (!root) {
-  throw new Error('Failed to find the root element');
-}
 
 const queryClient = new QueryClient({});
-ReactDOM.createRoot(root).render(
+ReactDOM.createRoot(root!).render(
   <QueryClientProvider client={queryClient}>
     <BrowserRouter>
       <App />
